@@ -1,0 +1,100 @@
+<html>
+	<head> 
+		<title>Lab 3.3 - HTML - CSS</title>
+	</head>
+	<style>
+		h1{
+			color : #FF9900;
+			text-align:center;
+		}
+		table, th, td {
+			border: 2px solid red ;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 5px;
+			text-align: left;    
+		}
+		th{
+			color:Red;
+		}
+		div.img {
+			margin-bottom: 20px;
+			padding: 0px;
+			text-align: center;
+			color: #FF0000 ;
+			font-weight: bold;
+		}
+		h2{
+			color: #0066FF;
+		}
+	</style>
+	<body>
+		<h1> CHƯƠNG TRÌNH HỌC PHP</h1>
+		<div class ="img">
+			<img src = "./img/Logo.jpg "alt ="" width ="250" height="150"><br>
+			Ngành lập trình & CSDL
+		</div>
+		<h2>Phân loại</h2>
+		<ol = "1"><i>Theo 2 hướng</i>
+			<li>Chuyên đề ngắn hạn</li>
+			<li>Lập trình viên PHP</li>
+		</ol>
+		<h2>Danh sách môn học</h2>
+		<table style="width:100%">
+			<tr style=" background-color:Orange">
+				<th>Hướng:</th>
+				<th>Tên môn</th>
+				<th>Số giờ</th>
+			</tr>
+			
+			
+			<tr>
+				<th rowspan="5">Chuyên đề ngắn hạn</th>
+				<tr>
+					<td>
+						Kỹ thuật lập trình với PHP
+					</td> 
+					<td> 
+						96
+					</td>
+				</tr>
+				<tr>	
+					<td>
+						Lập trình ứng dụng Web với PHP & My SQL
+					</td>
+					<td>
+						96 
+					</td> 
+				</tr>
+				<tr>
+					<td>
+						Lập trình PHP nâng cao (CodeIgniter Framework)
+					</td> 
+					<td>
+						48 	
+					</td> 
+				</tr>
+				<tr>
+					<td>
+						Zend Framework 2 cơ bản đến nâng cao
+					</td>
+					<td>
+						72
+					</td>
+				</tr>
+			</tr>
+			<tr>	
+				<th>
+					Lập trình viên PHP 
+				</th>
+				<td> Lập trình viên PHP </td>
+				<td> 120 </td>
+			</tr>
+		</table>
+		<p style = "font-size: 17px; margin-left: 350px"><b>Liên hệ: CS2 - Trung tâm ĐH KHTN - Số 357 Lê Hồng Phong - Phường 2 - Quận 10 - TP.HCM </b></p>
+		<p style = "font-size: 15px; text-align: center"><i>Hoặc gửi email đến </i> <ins style="color: #0066FF; font-weight: bold">tuvan@alphatek.edu.vn</ins></p>
+		<hr style="width:40%; height: 2px; color: #0066FF; background-color: #0066FF;">
+		<p style = "font-size: 15px; text-align: center"> <b> Copyright &copy; 2015, by </b> <a href = "http://t3h.vn/laptrinh/", style="color: #0066FF; font-weight: bold;"> Ngành lập trình & CSDL</a></p>
+	</body>
+</html>
