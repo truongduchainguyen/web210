@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Lab 4.3 - HTML - CSS</title>
+    </head>
+    <style>
+        span {
+            background-color: #DD4800;
+            color: #ffffff;
+            text-align: center;
+        }
+        table {
+            background-color: #FECFFD;
+        }
+        #demo {
+            background-color: rgb(215, 250, 229);
+        }
+
+    </style>
+    <body>
+        <form id = 'lab4.2'>
+            <table>
+                <thead><th colspan="2" id="title"><span>DIỆN TÍCH VÀ CHU VI HÌNH TRÒN</span></th></thead>
+                    <tr>
+                        <td> <label for="bankinh">Bán kính:</label></td>
+                        <td><input id='bankinh' type="text"><br></td>
+                    </tr>
+                    <tr>
+
+                        <td><label for="dientich">Diện tích:</label></td>
+                        <td><input id='dientich' type="text" readonly><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="chuvi">Chu vi:</label></td>
+                        <td><input id='chuvi' type="text" readonly><br></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p style="text-align: center;"><input form="lab4.2" value="Tính" onclick="calculate()" id="demo" style="text-align: center;" type="button"></input></p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="text-align: center;" id="result"></div>
+                        </td>
+                    </tr>
+            </table>
+            
+            
+            <script type="text/javascript">
+                function calculate() {
+                    var bankinh = Number(document.getElementById("bankinh").value);
+                    document.getElementById("dientich").value = bankinh * bankinh * 3.14;
+                    document.getElementById("chuvi").value = bankinh * 2 * 3.14;
+                }
+            </script>   
+        </form>
+         
+    </body>
+</html>

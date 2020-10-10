@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Lab 4.3 - HTML - CSS</title>
+    </head>
+    <style>
+        span {
+            background-color: #DD4800;
+            color: #ffffff;
+            text-align: center;
+        }
+        table {
+            background-color: #FECFFD;
+        }
+        #demo {
+            background-color: rgb(215, 250, 229);
+        }
+
+    </style>
+    <body>
+        <form id = 'lab4.2'>
+            <table>
+                <thead><th colspan="2" id="title"><span>THANH TOÁN TIỀN ĐIỆN</span></th></thead>
+                    <tr>
+                        <td> <label for="tenchuho">Tên chủ hộ:</label></td>
+                        <td><input id='tenchuho' type="text"><br></td>
+                        
+                    </tr>
+                    <tr>
+
+                        <td><label for="chisocu">Chỉ số cũ:</label></td>
+                        <td><input id='chisocu' type="text" ><br></td>
+                        <td>(Kw)</td>
+                    </tr>
+                    <tr>
+                        <td><label for="chisomoi">Chỉ số mới:</label></td>
+                        <td><input id='chisomoi' type="text" ><br></td>
+                        <td>(Kw)</td>
+                    </tr>
+                    <tr>
+                        <td><label for="dongia">Đơn giá:</label></td>
+                        <td><input id='dongia' type="text" ><br></td>
+                        <td>(VNĐ)</td>
+                    </tr>
+                    <tr>
+                        <td><label for="sotien">Số tiền thanh toán:</label></td>
+                        <td><input id='sotien' type="text" readonly><br></td>
+                        <td>(VNĐ)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p style="text-align: center;"><input form="lab4.2" value="Tính" onclick="calculate()" id="demo" style="text-align: center;" type="button"></input></p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="text-align: center;" id="result"></div>
+                        </td>
+                    </tr>
+            </table>
+            
+            
+            <script type="text/javascript">
+                function calculate() {
+                    var dongia = Number(document.getElementById("dongia").value);
+                    var chisocu = Number(document.getElementById("chisocu").value);
+                    var chisomoi = Number(document.getElementById("chisomoi").value);
+                    document.getElementById("sotien").value = (chisomoi - chisocu) * dongia
+                }
+            </script>   
+        </form>
+         
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Lab 4.2 - HTML - CSS</title>
+    </head>
+    <style>
+        span {
+            background-color: #DD4800;
+            color: #ffffff;
+            text-align: center;
+        }
+        table {
+            background-color: #FECFFD;
+        }
+        #demo {
+            background-color: rgb(215, 250, 229);
+        }
+
+    </style>
+    <body>
+        <form id = 'lab4.2'>
+            <table>
+                <th colspan="2" id="title"><span>ĐỊNH DẠNG MÀU CHỮ - MÀU NỀN</span></th>
+                    <tr>
+                        <td><label for="noidung">Nội dung:</label></td>
+                        <td><input id='noidung' type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="maunen">Màu nền:</label></td>
+                        <td> <input id='maunen' type="text"></td>  
+                    </tr>
+                    <tr>
+                        <td><label for="mauchu">Màu chữ:</label></td>
+                        <td><input id='mauchu' type="text"></td>  
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="background-color: #ffffff; text-align: center;">Kết quả sau khi nhấn xem kết quả</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p style="text-align: center;"><input form="lab4.2" value="Xem Kết Quả" onclick="changeText()" id="demo" style="text-align: center;" type="button"></input></p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="text-align: center;" id="result"></div>
+                        </td>
+                    </tr>
+            </table>
+            
+            
+            <script type="text/javascript">
+                function changeText() {
+                    var noidung = document.getElementById("noidung"); 
+                    var maunen = document.getElementById("maunen").value;
+                    var mauchu = document.getElementById("mauchu").value;
+                    //noidung.setAttribute("style", "backgroud-color: maunen; color: mauchu;");
+                    document.getElementById("result").style.color = mauchu;
+                    document.getElementById("result").style.backgroundColor = maunen;
+                    document.getElementById("result").innerHTML = noidung.value
+                }
+            </script>   
+        </form>
+         
+    </body>
+</html>
