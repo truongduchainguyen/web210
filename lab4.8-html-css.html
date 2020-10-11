@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Lab 02 4.8</title>
+<style>
+	input{
+			border-style: inset;
+		}	
+	@font-face {
+	  font-family: font_1;
+	  src: url('./font/VHPRES.TTF');
+	}
+</style>
+<body>
+	<div id= "wrapper">
+		<div class="container">
+			<form id="Ket-qua-hoc-tap" method="POST">
+				<table style="border-collapse: collapse;width: 25%;height:25%">
+					<thead>
+						<tr style="background-color:pink; height: 40px">
+							<th colspan="2"><h1 style="color: white; font-size: 20px; text-align:center;margin: 0; font-family:font_1;">KẾT QUẢ HỌC TẬP</h1></th>
+						</tr>
+					</thead>
+					<tbody style="text-indent: 10px;background-color:#FFEDCA">
+						<tr>
+							<td>Điểm HKI</td>
+							<td>
+								<input type="text" id="HKI" placeholder="Nhập Điểm Kỳ I">
+							</td>	
+						</tr>
+						<tr>
+							<td>Điểm HKII</td>
+							<td>
+								<input type="text" id="HKII" placeholder="Nhập Điểm Kỳ II">
+							</td>	
+						</tr>
+						<tr>
+							<td>Điểm Trung Bình</td>
+							<td>
+								<input type="text" id="DTB" disabled="disable">
+							</td>	
+						</tr>
+						<tr>
+							<td>Kết Quả</td>
+							<td>
+								<input type="text" id="KQ" disabled="disable">
+							</td>	
+						</tr>
+						<tr>
+							<td>Xếp loại học lực</td>
+							<td>
+								<input type="text" id="hoc-luc" disabled="disable">
+							</td>	
+						</tr>
+						<tr>
+							<td></td>
+							<td style="text-indent:25px">
+								<input type="button" onClick = "XepLoai()" value = "Xem Kết quả">
+							</td>
+						</tr> 
+					</tbody>
+			</form>
+		</div>
+	</div>
+		<script type="text/javascript">
+		function XepLoai(){
+			var A = parseInt(document.getElementById('HKI').value);
+			var B = parseInt(document.getElementById('HKII').value);
+			var C;
+			C = (A+B*2)/3;
+			document.getElementById("DTB").value = C.toFixed(2) ;
+			if(C >= 5 )document.getElementById("KQ").value = "Được lên lớp ";
+			else document.getElementById("KQ").value = "Ở lại lớp ";
+			
+			if (C >= 8)document.getElementById("hoc-luc").value = "Giỏi "; 
+			
+			else if (C >= 6.5 && C < 8) document.getElementById("hoc-luc").value = "Khá ";
+			else if (C >= 5 && C < 6.5) document.getElementById("hoc-luc").value = "Trung Bình "; 
+			
+			else document.getElementById("hoc-luc").value = "Yếu ";
+				
+		}
+	</script>	
+</body>
+</head>
+</html>

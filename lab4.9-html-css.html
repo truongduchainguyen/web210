@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Lab 02 4.9</title>
+<style>
+	input{
+			border-style: inset;
+		}	
+	@font-face {
+	  font-family: font_1;
+	  src: url('./font/VHPRES.TTF');
+	}
+	
+	.change::placeholder {
+	color: red;
+	}
+	#benchmarks{
+		color: red;
+	}	
+	
+</style>
+<body>
+	<div id= "wrapper">
+		<div class="container">
+			<form id="Ket-qua-hoc-tap" method="POST">
+				<table style="border-collapse: collapse;width: 25%;height:25%">
+					<thead>
+						<tr style="background-color:pink; height: 40px">
+							<th colspan="2"><h1 style="color: white; font-size: 20px; text-align:center;margin: 0; font-family:font_1;">KẾT QUẢ THI ĐẠI HỌC</h1></th>
+						</tr>
+					</thead>
+					<tbody style="text-indent: 10px;background-color:#FFEDCA">
+						<tr>
+							<td>Toán</td>
+							<td>
+								<input type="text" id="math" placeholder="Nhập Điểm Toán">
+							</td>	
+						</tr>
+						<tr>
+							<td>Lý</td>
+							<td>
+								<input type="text" id="physic" placeholder="Nhập Điểm Lý">
+							</td>	
+						</tr>
+						<tr>
+							<td>Hóa</td>
+							<td>
+								<input type="text" id="chemistry" placeholder="Nhập Điểm Hóa">
+							</td>	
+						</tr>
+						<tr>
+							<td>Điểm chuẩn</td>
+							<td>
+								<input type="text" id="benchmarks" placeholder="Nhập Điểm chuẩn" class="change">
+							</td>	
+						</tr>
+						<tr>
+							<td>Tổng điểm</td>
+							<td>
+								<input type="text" id="sum" disabled="disable">
+							</td>	
+						</tr>
+						<tr>
+							<td>Kết quả thi</td>
+							<td>
+								<input type="text" id="result" disabled="disable">
+							</td>	
+						</tr>
+						<tr>
+							<td></td>
+							<td style="text-indent:25px">
+								<input type="button" onClick = "Result()" value = "Xem Kết quả">
+							</td>
+						</tr> 
+					</tbody>
+			</form>
+		</div>
+	</div>
+		<script type="text/javascript">
+		function Result(){
+			var A = parseInt(document.getElementById('math').value);
+			var B = parseInt(document.getElementById('physic').value);
+			var C = parseInt(document.getElementById('chemistry').value);
+			var D = parseInt(document.getElementById('benchmarks').value);
+			var res;
+			res = A+B+C;
+			document.getElementById("sum").value = res;
+			if(A != 0 && B != 0 && C != 0 && res >= D)document.getElementById("result").value = "Đậu";
+			else document.getElementById("result").value = "Rớt";
+				
+		}
+	</script>	
+</body>
+</head>
+</html>

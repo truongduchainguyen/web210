@@ -1,0 +1,55 @@
+<html>
+<head>
+<title> Lab 02 4.1</title>
+<body>
+	<div id= "wrapper">
+		<div class="container">
+			<form id="Tinh-dien-tich-hcn">
+				<table>
+					<thead>
+						<tr>
+							<th colspan="2"><h1 style="color: orange">Diện tích HCN</h1></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Chiều dài</td>
+							<td>
+								<input type="number" id="chieu-dai" placeholder="Nhập chiều dài">
+							</td>	
+						</tr>
+						<tr>
+							<td>Chiều rộng</td>
+							<td>
+								<input type="number" id="chieu-rong" placeholder="Nhập chiều rộng">
+							</td>
+						</tr>
+						<tr>
+							<td>Diện tích</td>
+							<td>
+								<input type="number" id="dien-tich" placeholder="Diện tích hình chữ nhật" disabled="disable">
+							</td>	
+						</tr>
+						<tr>
+							<td colspan="2">
+								<input type="button" onClick = "TinhDientich()" value = "Tinh">
+							</td>
+						</tr> 	
+					</tbody>
+				</table>
+			</form>	
+		</div>	
+	</div>
+	<script type="text/javascript">
+		function TinhDientich(){
+			var dai = document.getElementById('chieu-dai');
+			var rong = document.getElementById('chieu-rong');
+			var dientich = dai.value * rong.value;
+			//alert
+			//return dientich;
+			document.getElementById("dien-tich").value = dientich;
+		}
+	</script>	
+</body>
+</head>
+</html>

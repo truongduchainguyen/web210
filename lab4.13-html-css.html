@@ -1,0 +1,61 @@
+<html>
+	<head><title>Lab 02 4.13</title></head>
+		<style>
+			input{
+				border-style: inset;
+			}
+			#kq{
+				background: #FCFF33;
+				color: red
+			}
+		</style>
+	<body>
+		<div id= "wrapper">
+		<div class="container">
+			<form id="Doc-so" method="POST">
+				<table style="border-collapse: collapse;width: 30%;height:15%">
+				<thead>
+						<tr style="background-color:blue; height: 40px">
+							<th colspan="5"><h1 style="color: white; font-size: 20px; text-align:center;margin: 0;">ĐỌC SỐ </h1></th>
+						</tr>
+				</thead>
+				<tbody style="text-indent: 5px;background-color:Cyan">
+						<tr style = "overflow:hidden; white-space:nowrap">
+							<td>Nhập số (0->9) </td>
+							<td></td>
+							<td> Bằng chữ</td>
+						</tr> 
+						<tr>
+							<td>
+							<input type="text" id="so" placeholder="Nhập Số">
+							</td>
+							<td>
+								<input type="button" onClick = "Result()" value = "=>">
+							</td>
+							<td>
+							<input type="text" id="kq" disabled="disable">
+							</td>
+						</tr>
+				</tbody>
+			</form>	
+		</div>
+	</div>
+		<script type="text/javascript">
+		function Result(){
+			var A = parseInt(document.getElementById('so').value);
+			switch (A){
+				case 0: document.getElementById("kq").value = "Không"; break;
+				case 1: document.getElementById("kq").value = "Một"; break;
+				case 2: document.getElementById("kq").value = "Hai"; break;
+				case 3: document.getElementById("kq").value = "Ba"; break;
+				case 4: document.getElementById("kq").value = "Bốn"; break;
+				case 5: document.getElementById("kq").value = "Năm"; break;
+				case 6: document.getElementById("kq").value = "Sáu"; break;
+				case 7: document.getElementById("kq").value = "Bảy"; break;
+				case 8: document.getElementById("kq").value = "Tám"; break;
+				default: document.getElementById("kq").value = "Chín"; break;
+			}
+		}
+	</script>
+	</body>
+</html>

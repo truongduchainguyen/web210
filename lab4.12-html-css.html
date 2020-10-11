@@ -1,0 +1,73 @@
+<html>
+	<head><title>Lab 02 4.12</title></head>
+		<style>
+			input{
+				border-style: inset;
+				}
+		</style>
+	<body>
+	<div id= "wrapper">
+		<div class="container">
+			<form id="Phuong-trinh-bac-1" method="POST">
+				<table style="border-collapse: collapse;width: 25%;height:25%">
+					<thead>
+						<tr style="background-color:orange	; height: 40px">
+							<th colspan="5"><h1 style="color: brown; font-size: 20px; text-align:center;margin: 0;">NHẬN DẠNG TAM GIÁC </h1></th>
+						</tr>
+					</thead>
+					<tbody style="text-indent: 5px;background-color:#FFEDCA">
+						<tr>
+							<td>Cạnh 1: </td>
+							<td>
+								<input type="text" id="a" placeholder="Nhập Số">
+							</td>	
+							<td>(cm) </td>
+						</tr>
+						<tr>
+							<td>Cạnh 2: </td>
+							<td>
+								<input type="text" id="b" placeholder="Nhập Số">
+							</td>	
+							<td>(cm) </td>
+						</tr>
+						<tr>
+							<td>Cạnh 3: </td>
+							<td>
+								<input type="text" id="c" placeholder="Nhập Số">
+							</td>	
+							<td>(cm) </td>
+						</tr>
+						<tr>
+							<td>Loại tam giác </td>
+							<td colspan ="4">
+								<input type="text" id="triangle" disabled="disable">
+							</td>	
+						</tr>
+						<tr style ="text-align:center">
+							<td colspan="5" style="text-indent:25px">
+								<input type="button" onClick = "recognize()" value = "Nhận dạng">
+							</td>
+						</tr> 
+					</tbody>	
+			</form>
+		</div>
+	</div>
+		<script type="text/javascript">
+		function recognize(){
+			var A = parseInt(document.getElementById('a').value);
+			var B = parseInt(document.getElementById('b').value);
+			var C = parseInt(document.getElementById('c').value);
+			if (A+B>C && B+C >A && A+C>B ){
+				if (A == B && A == C && B == C) document.getElementById("triangle").value = "Tam giác đều";
+				else if (A == B && A != C || A == C && A != B || B == C && B != A) document.getElementById("triangle").value = "Tam giác cân";
+				else if (A*A == B*B + C*C || B*B == A*A + C*C || C*C == A*A + B*B){
+					if (A == B || B == C || A == C) document.getElementById("triangle").value = "Tam giác vuông cân";
+					else document.getElementById("triangle").value = "Tam giác vuông";
+				}
+				else document.getElementById("triangle").value = "Tam giác thường";
+			}
+			else document.getElementById("triangle").value = "Không là tam giác";
+		}
+		</script>
+	</body>
+</html>

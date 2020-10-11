@@ -1,0 +1,85 @@
+<html>
+	<head><title>Lab 02 4.14</title></head>
+		<style>
+			input{
+				border-style: inset;
+			}
+			#kq{
+				background: #FCFF33;
+				color: red
+			}
+			.button{
+				color: red
+			}
+		</style>
+	<body>
+		<div id= "wrapper">
+		<div class="container">
+			<form id="calender" method="POST">
+				<table style="border-collapse: collapse;width: 30%;height:15%">
+				<thead>
+						<tr style="background-color:blue; height: 40px">
+							<th colspan="5"><h1 style="color: white; font-size: 20px; text-align:center;margin: 0;"> TÍNH NĂM ÂM LỊCH </h1></th>
+						</tr>
+				</thead>
+				<tbody style="text-indent: 5px;background-color:Cyan">
+						<tr style = "overflow:hidden; white-space:nowrap">
+							<td> Năm dương lịch </td>
+							<td></td>
+							<td> Năm âm lịch </td>
+						</tr> 
+						<tr>
+							<td>
+							<input type="text" id="so" placeholder="Nhập Số">
+							</td>
+							<td>
+								<input type= "button" class = "button" onClick = "Result()" value = "=>">
+							</td>
+							<td>
+							<input type="text" id="kq" disabled="disable">
+							</td>
+						</tr>
+				</tbody>
+			</form>	
+		</div>
+	</div>
+		<script type="text/javascript">
+		function Result(){
+			var Nam = parseInt(document.getElementById('so').value);
+			var Can;
+			var Chi;
+			var res_1;
+			var res_2;
+			Can = Nam%10;
+			Chi = Nam%12;
+			switch (Can){
+				case 0: res_1 = "Canh"; break;
+				case 1: res_1 = "Tân"; break;
+				case 2: res_1 = "Nhâm"; break;
+				case 3: res_1 = "Quí"; break;
+				case 4: res_1 = "Giáp"; break;
+				case 5: res_1 = "Ất"; break;
+				case 6: res_1 = "Bính"; break;
+				case 7: res_1 = "Đinh"; break;
+				case 8: res_1 = "Mậu"; break;
+				case 9: res_1 = "Kỷ"; break;
+			}
+			switch (Chi){
+				case 0: res_2 = "Thân"; break;
+				case 1: res_2 = "Dậu"; break;
+				case 2: res_2 = "Tuất"; break;
+				case 3: res_2 = "Hợi"; break;
+				case 4: res_2 = "Tí"; break;
+				case 5: res_2 = "Sửu"; break;
+				case 6: res_2 = "Dần"; break;
+				case 7: res_2 = "Mẹo"; break;
+				case 8: res_2 = "Thìn"; break;
+				case 9: res_2 = "Tỵ"; break;
+				case 10: res_2 = "Ngọ"; break;
+				case 11: res_2 = "Mùi"; break;
+			}
+			document.getElementById('kq').value = res_1 + " " + res_2;
+		}
+	</script>
+	</body>
+</html>

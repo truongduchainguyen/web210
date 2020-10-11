@@ -1,0 +1,89 @@
+<html>
+<head>
+<title> Lab 02 4.11 </title>
+<style>
+	div{
+		font-family:verdana;
+	}	
+	#gio{
+		border-style: inset;
+		width: 140px;
+	}
+	input[type="label"]{
+		border-style: none;
+		background-color: inherit;
+		color: black;
+		margin-left: 35%;
+	}	
+	input[type="button"]{
+		border-width: 1px;
+		background-color: silver;
+		border-style: outset;
+	}
+	#cost{
+		background-color: lightgreen;
+	}
+</style>
+<body>
+	<div id= "wrapper">
+		<div class="container">
+			<form id="Chaotheogio" method="POST">
+				<table style="border-collapse: collapse;width: 30%;height:20%">
+					<thead>
+						<tr style="background-color:#87CEFA; height: 40px">
+							<th colspan="3"><h1 style="color: #0000CD; font-size: 20px; text-align:center;margin: 0">TÍNH TIỀN KARAOKE</h1></th>
+						</tr>
+					</thead>
+					<tbody style="text-indent: 10px;background-color:#FFEDCA; font-size:15px;width: 193px">
+						<tr style="background-color:#B0E0E6">
+							<td>Giờ bắt đầu:</td>
+							<td>
+								<input type="number" id="starttime">
+							</td>
+							<td>(h)</td>							
+						</tr>
+						<tr style="background-color:#B0E0E6">
+							<td>Giờ kết thúc</td>
+							<td>
+								<input type="number" id="endtime">
+							</td>
+							<td>(h)</end>
+						</tr>
+						<tr style="background-color:#B0E0E6">
+							<td>Tiền thanh toán</td>
+							<td>
+								<input type="text" id="cost" disabled="disabled">
+							</td>
+							<td>(VNĐ)</end>
+						<tr style="background-color:#87CEFA">
+							<td></td>
+							<td colspan="2" style="text-indent:10px">
+								<input type="button" onClick = "thanhtoan()" value = "Tính tiền">
+							</td>
+						</tr> 	
+					</tbody>
+				</table>
+			</form>	
+		</div>	
+	</div>
+	<script type="text/javascript">
+		function thanhtoan(){
+			var gioA = parseInt(document.getElementById('starttime').value);
+			var gioB =parseInt(document.getElementById('endtime').value);
+			if(gioA >= gioB) document.getElementById("cost").value = "Giờ kết thúc phải > giờ bắt đầu";
+			else{
+				if(gioA < 10 || gioB > 24) document.getElementById("cost").value = "Chưa đến giờ hoạt động";
+				else{
+					var kq = 0;
+					for(var i = gioA; i < gioB; i++){
+						if(i<17) kq += 20000;
+						else kq += 45000;
+					}
+					document.getElementById("cost").value = kq;
+				}
+			}
+		}
+	</script>	
+</body>
+</head>
+</html>
