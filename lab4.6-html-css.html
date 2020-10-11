@@ -1,0 +1,68 @@
+<html>
+<head>
+<title> Lab 02 4.5 </title>
+<style>
+	input{
+		border-style: inset;
+	}	
+	#so-lon-hon{
+		background-color: pink;
+	}
+	input[type="button"]{
+		border-width: 1px;
+		background-color: silver;
+		border-style: outset;
+	}	
+</style>
+<body>
+	<div id= "wrapper">
+		<div class="container">
+			<form id="Tim-so-lon-hon" method="POST">
+				<table style="border-collapse: collapse;width: 25%;height:25%">
+					<thead>
+						<tr style="background-color:orange; height: 40px">
+							<th colspan="2"><h1 style="color: brown; font-size: 20px; text-align:center;margin: 0; font-family:Papyrus">TÌM SỐ LỚN HƠN</h1></th>
+						</tr>
+					</thead>
+					<tbody style="text-indent: 10px;background-color:#FFEDCA">
+						<tr>
+							<td>Số A:</td>
+							<td>
+								<input tyle="text" id="so-A" placeholder="Nhập số A">
+							</td>	
+						</tr>
+						<tr>
+							<td>Số B:</td>
+							<td>
+								<input tyle="text" id="so-B" placeholder="Nhập số B">
+							</td>
+						</tr>
+						<tr>
+							<td>Số lớn hơn:</td>
+							<td>
+								<input type="text" id="so-lon-hon" disabled="disable">
+							</td>	
+						</tr>
+						<tr>
+							<td></td>
+							<td style="text-indent:25px">
+								<input type="button" onClick = "TinhSoLonHon()" value = "Tìm">
+							</td>
+						</tr> 	
+					</tbody>
+				</table>
+			</form>	
+		</div>	
+	</div>
+	<script type="text/javascript">
+		function TinhSoLonHon(){
+			var soA = parseInt(document.getElementById('so-A').value);
+			var soB = parseInt(document.getElementById('so-B').value);
+			var soLonHon;
+			soLonHon = soA > soB?soA:soB;
+			document.getElementById("so-lon-hon").value = soLonHon;
+		}
+	</script>	
+</body>
+</head>
+</html>

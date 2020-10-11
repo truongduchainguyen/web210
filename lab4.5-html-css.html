@@ -1,0 +1,64 @@
+<html>
+<head>
+<title> Lab 02 4.5 </title>
+<style>
+	#canh-huyen{
+		background-color: pink;
+		border-style: inset;
+	}
+	input[type="button"]{
+		border-color: blue;
+		border-width: 1px;
+	}	
+</style>
+<body>
+	<div id= "wrapper">
+		<div class="container">
+			<form id="Canh-huyen-tam-giac-vuong" method="POST">
+				<table style="border-collapse: collapse;width: 25%;height:25%">
+					<thead>
+						<tr style="background-color:orange; height: 40px">
+							<th colspan="2"><h1 style="color: brown; font-size: 20px; text-align:center;margin: 0">CẠNH HUYỀN TAM GIÁC VUÔNG</h1></th>
+						</tr>
+					</thead>
+					<tbody style="text-indent: 10px;background-color:#FFEDCA">
+						<tr>
+							<td>Cạnh A:</td>
+							<td>
+								<input tyle="number" id="canh-A" placeholder="Nhập độ dài cạnh A">
+							</td>	
+						</tr>
+						<tr>
+							<td>Cạnh B:</td>
+							<td>
+								<input tyle="number" id="canh-B" placeholder="Nhập độ dài cạnh B">
+							</td>
+						</tr>
+						<tr>
+							<td>Cạnh huyền:</td>
+							<td>
+								<input type="number" id="canh-huyen" placeholder="Độ dài cạnh huyền" disabled="disable">
+							</td>	
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<input type="button" onClick = "TinhCanhHuyen()" value = "Tính">
+							</td>
+						</tr> 	
+					</tbody>
+				</table>
+			</form>	
+		</div>	
+	</div>
+	<script type="text/javascript">
+		function TinhCanhHuyen(){
+			var canhA = document.getElementById('canh-A');
+			var canhB = document.getElementById('canh-B');
+			var canhhuyen = Math.sqrt(Math.pow(canhA.value,2) + Math.pow(canhB.value,2));
+			document.getElementById("canh-huyen").value = Math.round(canhhuyen*100)/100;
+		}
+	</script>	
+</body>
+</head>
+</html>
