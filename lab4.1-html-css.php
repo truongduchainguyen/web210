@@ -1,6 +1,13 @@
 <html>
 <head>
 <title> Lab 02 4.1</title>
+<?php
+	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+		$chieudai = $_POST['chieu-dai'];
+		$chieurong = $_POST['chieu-rong'];
+		$dientich = $chieudai * $chieurong;
+	}
+?>
 <body>
 	<div id= "wrapper">
 		<div class="container">
@@ -15,19 +22,22 @@
 						<tr>
 							<td>Chiều dài</td>
 							<td>
-								<input type="number" id="chieu-dai" placeholder="Nhập chiều dài">
+								<input type="number" id="chieu-dai" name="chieu-dai" placeholder="Nhập chiều dài"
+								value="<?php echo $chieudai?>">
 							</td>	
 						</tr>
 						<tr>
 							<td>Chiều rộng</td>
 							<td>
-								<input type="number" id="chieu-rong" placeholder="Nhập chiều rộng">
+								<input type="number" id="chieu-rong" name="chieu-rong" placeholder="Nhập chiều rộng"
+								value="<?php echo $chieurong?>">
 							</td>
 						</tr>
 						<tr>
 							<td>Diện tích</td>
 							<td>
-								<input type="number" id="dien-tich" placeholder="Diện tích hình chữ nhật" disabled="disable">
+								<input type="number" id="dien-tich" name="dien-tich" placeholder="Diện tích hình chữ nhật" disabled="disable"
+								value="<?php echo $dientich?>">
 							</td>	
 						</tr>
 						<tr>
